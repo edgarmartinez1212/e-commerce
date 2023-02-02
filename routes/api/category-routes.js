@@ -11,7 +11,7 @@ router.get("/", async (req, res) => {
     });
     return res.status(200).json(data);
   } catch (error) {
-    return res.status(200).json(error);
+    return res.status(500).json(error);
   }
 });
 
@@ -25,7 +25,7 @@ router.get("/:id", async (req, res) => {
     });
     return res.status(200).json(data);
   } catch (error) {
-    return res.status(200).json(data);
+    return res.status(500).json(data);
   }
 });
 
@@ -35,7 +35,7 @@ router.post("/", async (req, res) => {
     const data = await Category.create(req.body);
     return res.status(200).json(data);
   } catch (error) {
-    return res.status(400).json(error);
+    return res.status(500).json(error);
   }
 });
 
@@ -47,7 +47,7 @@ router.put("/:id", async (req, res) => {
     });
     return res.status(200).json(data);
   } catch (error) {
-    return res.status(400).json(error);
+    return res.status(500).json(error);
   }
 });
 
@@ -59,7 +59,7 @@ router.delete("/:id", async (req, res) => {
     });
     return res.status(200).json(data);
   } catch (error) {
-    return res.status(200).json(error);
+    return res.status(500).json(error);
   }
 });
 
